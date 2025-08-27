@@ -1,0 +1,16 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "欢迎来到我的博客",
+    "section": "",
+    "text": "这里以后会写一些科研随笔、笔记和文章。"
+  },
+  {
+    "objectID": "posts/welcome.html",
+    "href": "posts/welcome.html",
+    "title": "Hello Quarto!",
+    "section": "",
+    "text": "这是我的第一篇 Quarto 博文。\n支持数学公式：\n\\(E = mc^2\\)\n支持多行公式： \\[\n\\Delta f(x) = \\sum_{i=1}^n \\frac{\\partial^2 f}{\\partial x_i^2}(x)\n\\]"
+  }
+]
