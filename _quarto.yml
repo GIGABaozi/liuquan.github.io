@@ -1,0 +1,18 @@
+project:
+  type: website
+
+website:
+  title: "My Quarto Blog"
+  navbar:
+    left:
+      - href: index.qmd
+        text: 首页
+      - href: about.qmd
+        text: 关于
+      - text: 文章
+        menu: posts
+
+format:
+  html:
+    theme: cosmo
+    toc: true
