@@ -14,4 +14,4 @@ $$
 \Delta f(x) = \sum_{i=1}^n \frac{\partial^2 f}{\partial x_i^2}(x)
 $$
 
-![我的示意图](images/diagram.png)
+![我的示意图](images/test.png)
