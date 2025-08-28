@@ -21,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -127,7 +161,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#基本介绍" id="toc-基本介绍" class="nav-link active" data-scroll-target="#基本介绍">基本介绍</a></li>
+  <li><a href="#muon-optimizer" id="toc-muon-optimizer" class="nav-link active" data-scroll-target="#muon-optimizer">Muon Optimizer</a>
+  <ul class="collapse">
+  <li><a href="#newton-method切线找根" id="toc-newton-method切线找根" class="nav-link" data-scroll-target="#newton-method切线找根">Newton Method：切线找根</a></li>
+  <li><a href="#newton-schulz-method牛顿法的矩阵类似" id="toc-newton-schulz-method牛顿法的矩阵类似" class="nav-link" data-scroll-target="#newton-schulz-method牛顿法的矩阵类似">Newton-Schulz Method：牛顿法的矩阵类似</a></li>
+  <li><a href="#muon-optimizer-1" id="toc-muon-optimizer-1" class="nav-link" data-scroll-target="#muon-optimizer-1">Muon Optimizer</a></li>
+  </ul></li>
+  <li><a href="#muonclip-optimizer" id="toc-muonclip-optimizer" class="nav-link" data-scroll-target="#muonclip-optimizer">MuonClip Optimizer</a></li>
+  <li><a href="#关于正交化的讨论" id="toc-关于正交化的讨论" class="nav-link" data-scroll-target="#关于正交化的讨论">关于正交化的讨论</a></li>
+  <li><a href="#来源" id="toc-来源" class="nav-link" data-scroll-target="#来源">来源</a></li>
   </ul>
 </nav>
     </div>
@@ -169,10 +211,58 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>猫猫镇楼</figcaption>
 </figure>
 </div>
-<p>这篇博文是讲Adam优化器，Adaptive Moment Estimation</p>
-<section id="基本介绍" class="level1">
-<h1>基本介绍</h1>
-<p><strong>核心想法</strong>：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。</p>
+<p>这篇博文是讲Muon优化器，Adaptive Moment Estimation</p>
+<ul>
+<li><p>你可能收获：一种新的optimzer的原理</p></li>
+<li><p>你很难收获：实践中的应用结果</p></li>
+</ul>
+<section id="muon-optimizer" class="level1">
+<h1>Muon Optimizer</h1>
+<p><strong>Motivation</strong>：把原始梯度矩阵换成一个正交阵 <strong>方法</strong>：应用Newton-Schulz matrix iteration <strong>优势</strong>： - 不用做SVD分解，很方便 - 当前的updates matrics呈现出low-rank matrices，此方法可以增加多样性（和我之前研究相符、值得进一步研究）</p>
+<section id="newton-method切线找根" class="level2">
+<h2 class="anchored" data-anchor-id="newton-method切线找根">Newton Method：切线找根</h2>
+<p><img width="1205" height="780" alt="image" src="https://github.com/user-attachments/assets/77ea9e2d-c267-4318-95cf-b3a684d54ac0"></p>
+</section>
+<section id="newton-schulz-method牛顿法的矩阵类似" class="level2">
+<h2 class="anchored" data-anchor-id="newton-schulz-method牛顿法的矩阵类似">Newton-Schulz Method：牛顿法的矩阵类似</h2>
+<p><strong>Motivation</strong>：把原本的矩阵逐渐迭代成正交阵 <strong>一次迭代</strong>： <img width="376" height="134" alt="image" src="https://github.com/user-attachments/assets/754a8c97-fd48-4eaf-851d-8d9c271fa2c7"></p>
+<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img width="728" height="415" alt="image" src="https://github.com/user-attachments/assets/868dce11-9683-4a2a-978d-9db8bebf02b2"></p>
+</section>
+<section id="muon-optimizer-1" class="level2">
+<h2 class="anchored" data-anchor-id="muon-optimizer-1">Muon Optimizer</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pytorch code</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> newtonschulz5(G, steps<span class="op">=</span><span class="dv">5</span>, eps<span class="op">=</span><span class="fl">1e-7</span>):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> G.ndim <span class="op">==</span> <span class="dv">2</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    a, b, c <span class="op">=</span> (<span class="fl">3.4445</span>, <span class="op">-</span><span class="fl">4.7750</span>, <span class="fl">2.0315</span>) <span class="op">------------------------&gt;</span> 满足条件二</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>    X <span class="op">=</span> G.bfloat16()</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    X <span class="op">/=</span> (X.norm() <span class="op">+</span> eps)  <span class="op">-------------------------------------&gt;</span> 满足条件一</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> G.size(<span class="dv">0</span>) <span class="op">&gt;</span> G.size(<span class="dv">1</span>):</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X.T</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> _ <span class="kw">in</span> <span class="bu">range</span>(steps):</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>        A <span class="op">=</span> X <span class="op">@</span> X.T</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>        B <span class="op">=</span> b <span class="op">*</span> A <span class="op">+</span> c <span class="op">*</span> A <span class="op">@</span> A</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> a <span class="op">*</span> X <span class="op">+</span> B <span class="op">@</span> X</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> G.size(<span class="dv">0</span>) <span class="op">&gt;</span> G.size(<span class="dv">1</span>):</span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X.T</span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化 <img width="726" height="457" alt="image" src="https://github.com/user-attachments/assets/e9add655-6526-448f-903c-bc78dd47b583"></p>
+</section>
+</section>
+<section id="muonclip-optimizer" class="level1">
+<h1>MuonClip Optimizer</h1>
+<p><img width="1089" height="530" alt="image" src="https://github.com/user-attachments/assets/4b627c08-3411-40cc-ab92-9d0304ee202c"></p>
+</section>
+<section id="关于正交化的讨论" class="level1">
+<h1>关于正交化的讨论</h1>
+<p><strong>muon观察到</strong>：用SGD-momentum and Adam更新时得到的梯度矩阵大都是high condition number，也就是最大奇异值和最小奇异值的比值很大。换句话说，可以近似地将梯度矩阵看成一个低秩矩阵，low-rank matrices。</p>
+<p>我的上次实验： <img width="810" height="283" alt="image" src="https://github.com/user-attachments/assets/f08f5fab-4886-4952-a92f-a06739d945e5"></p>
+</section>
+<section id="来源" class="level1">
+<h1>来源</h1>
+<ul>
+<li>muon: https://kellerjordan.github.io/posts/muon/</li>
+<li>muonclip: https://moonshotai.github.io/Kimi-K2/</li>
+</ul>
 
 
 </section>
