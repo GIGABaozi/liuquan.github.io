@@ -71,9 +71,44 @@ def newtonschulz5(G, steps=5, eps=1e-7):
 - 第四行：加momentum
 - 第五行：正交化
 
+\begin{algorithm}[H]
+\caption{Muon}
+\begin{algorithmic}[1]
+\Require Learning rate $\eta$, momentum $\mu$
+\State Initialize $B_0 \gets 0$
+\For{$t = 1, \dots$}
+  \State Compute gradient $G_t \gets \nabla_\theta \mathcal{L}_t(\theta_{t-1})$
+  \State $B_t \gets \mu B_{t-1} + G_t$
+  \State $O_t \gets \text{NewtonSchulz5}(B_t)$
+  \State Update parameters $\theta_t \gets \theta_{t-1} - \eta O_t$
+\EndFor
+\State \Return $\theta_t$
+\end{algorithmic}
+\end{algorithm}
+
 
 # MuonClip Optimizer
-**Motivation**：修剪更新后的$W_q$\$W_k$矩阵，将其范数控制在1以内
+**Motivation**：直接修改更新后的$W_q$\$W_k$参数矩阵。这一步与之前的操作无关。
+
+**qk-clip 技术**：放缩Q、K矩阵，将两个矩阵的范数控制在一定范围内。：
+
+$$
+q_i = \eta^\alpha W_q x_i, \quad k_i = \eta^{1-\alpha} W_k x_i
+$$
+
+其中 $\alpha$ 为平衡Q与K的超参：
+
+$$
+(\eta^\alpha q_i)^\top (\eta^{1-\alpha} k_j) = \eta q_i^\top k_j
+$$
+
+自适应因子 $\eta$（阈值 $t$）在每步根据最大值：
+
+$$
+\eta = \min\left(\frac{t}{\max_{i,j}(q_i^\top k_j)},1\right)
+$$
+
+其中 $t$ 是超参。
 
 
 # 关于正交化的讨论
