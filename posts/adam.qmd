@@ -4,7 +4,7 @@ date: 2025-08-27
 categories: [RL, Optimizer]
 ---
 
-![猫猫镇楼](../images/test.png){fig-align="center"}
+![猫猫镇楼](../images/test.png)
 
 这篇博文是讲Adam优化器，Adaptive Moment Estimation
 
@@ -39,7 +39,7 @@ $\eta, \epsilon, \beta_1, \beta_2$
 - 一阶矩控制更新方向，二阶矩控制更新速度
 - 一阶矩$m_t$也是一种梯度，是过往梯度的“融合”。$\beta_1$一般设做$0.9$，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减
 
-![梯度在更新中的贡献](../images/adam_gradient_explain.png){fig-align="center"}
+![梯度在更新中的贡献](../images/adam_gradient_explain.png)
 
 
 
