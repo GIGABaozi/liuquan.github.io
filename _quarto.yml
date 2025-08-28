@@ -25,5 +25,6 @@ format:
     css: styles.css
     toc: true
     highlight-style: espresso
+    fig-align: center
 
 # 可选：添加全局脚注、执行设置等
