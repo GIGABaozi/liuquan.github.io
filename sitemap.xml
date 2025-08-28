@@ -1,15 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://yourname.github.io/images/test.html</loc>
-    <lastmod>2025-08-28T04:03:34.626Z</lastmod>
+    <loc>https://yourname.github.io/index.html</loc>
+    <lastmod>2025-08-28T04:03:36.696Z</lastmod>
   </url>
   <url>
     <loc>https://yourname.github.io/posts/adam.html</loc>
-    <lastmod>2025-08-28T04:03:34.626Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yourname.github.io/index.html</loc>
-    <lastmod>2025-08-28T04:03:34.626Z</lastmod>
+    <lastmod>2025-08-28T04:03:36.696Z</lastmod>
   </url>
 </urlset>
