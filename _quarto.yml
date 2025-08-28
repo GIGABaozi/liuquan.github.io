@@ -27,4 +27,11 @@ format:
     highlight-style: espresso
     fig-align: center
 
+comments:
+  giscus:
+    repo: yourname/yourname.github.io
+    repo-id: "R_kgDOPlIFIA"
+    category: "Comments"
+    category-id: "DIC_kwDOPlIFIM4CusaC"
+
 # 可选：添加全局脚注、执行设置等
