@@ -1,0 +1,13 @@
+---
+title: "Muon Optimizer"
+date: 2025-08-28
+categories: [RL, Optimizer]
+---
+
+![猫猫镇楼](../images/test.png)
+
+这篇博文是讲Adam优化器，Adaptive Moment Estimation
+
+# 基本介绍
+
+**核心想法**：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。
