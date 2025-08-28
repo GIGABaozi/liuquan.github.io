@@ -3,8 +3,8 @@ title: "Muon Optimizer"
 date: 2025-08-28
 categories: [RL, Optimizer]
 format:
-  pdf:
-    include-in-header: preamble.tex
+  html:
+    theme: cosmo
 ---
 
 ![猫猫镇楼](../images/maomao2.png)
@@ -71,20 +71,21 @@ def newtonschulz5(G, steps=5, eps=1e-7):
 - 第四行：加momentum
 - 第五行：正交化
 
-\begin{algorithm}[H]
-\caption{Muon}
-\begin{algorithmic}[1]
-\Require Learning rate $\eta$, momentum $\mu$
-\State Initialize $B_0 \gets 0$
-\For{$t = 1, \dots$}
-  \State Compute gradient $G_t \gets \nabla_\theta \mathcal{L}_t(\theta_{t-1})$
-  \State $B_t \gets \mu B_{t-1} + G_t$
-  \State $O_t \gets \text{NewtonSchulz5}(B_t)$
-  \State Update parameters $\theta_t \gets \theta_{t-1} - \eta O_t$
-\EndFor
-\State \Return $\theta_t$
-\end{algorithmic}
-\end{algorithm}
+::: {.callout-note}
+## Algorithm Muon
+
+**Require:** Learning rate $\eta$, momentum $\mu$
+
+1. Initialize $B_0 \gets 0$  
+2. For $t = 1, \dots$ do  
+   - Compute $G_t \gets \nabla_\theta \mathcal{L}_t(\theta_{t-1})$  
+   - $B_t \gets \mu B_{t-1} + G_t$  
+   - $O_t \gets \text{NewtonSchulz5}(B_t)$  
+   - Update $\theta_t \gets \theta_{t-1} - \eta O_t$  
+3. return $\theta_t$
+:::
+
+
 
 
 # MuonClip Optimizer
