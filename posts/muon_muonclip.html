@@ -252,7 +252,7 @@ window.Quarto = {
 <h2 class="anchored" data-anchor-id="newton-method切线找根">Newton Method：切线找根</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="../images/newton_method.png" class="img-fluid figure-img"></p>
+<p><img src="../images/newton_method.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption>Newton_Method</figcaption>
 </figure>
 </div>
@@ -267,7 +267,7 @@ G' &amp;:= aG + b(GG^\top)G + c(GG^\top)^2 G \\
    &amp;= U(aS + bS^3 + cS^5)V^\top
 \end{aligned}
 \]</span></p>
-<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img src="../images/newton_schulz_method.png" class="img-fluid" alt="Newton_Method"></p>
+<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img src="../images/newton_schulz_method.png" class="img-fluid" style="width:60.0%" alt="Newton_Method"></p>
 </section>
 <section id="muon-optimizer-1" class="level2">
 <h2 class="anchored" data-anchor-id="muon-optimizer-1">Muon Optimizer</h2>
@@ -286,7 +286,16 @@ G' &amp;:= aG + b(GG^\top)G + c(GG^\top)^2 G \\
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> G.size(<span class="dv">0</span>) <span class="op">&gt;</span> G.size(<span class="dv">1</span>):</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X.T</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化</p>
+<p><strong>应用上述Newton-Schulz的充分条件</strong>：</p>
+<ul>
+<li><p>初始G的奇异值范围在[0,1]之间，所以每次会除以F范数</p></li>
+<li><p>当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c</p></li>
+</ul>
+<p><strong>完整算法</strong></p>
+<ul>
+<li><p>第四行：加momentum</p></li>
+<li><p>第五行：正交化</p></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

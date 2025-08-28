@@ -37,7 +37,7 @@
 <h2 class="anchored" data-anchor-id="newton-method切线找根">Newton Method：切线找根</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://yourname.github.io/images/newton_method.png" class="img-fluid figure-img"></p>
+<p><img src="https://yourname.github.io/images/newton_method.png" class="img-fluid figure-img" style="width:60.0%"></p>
 <figcaption>Newton_Method</figcaption>
 </figure>
 </div>
@@ -45,7 +45,7 @@
 <section id="newton-schulz-method牛顿法的矩阵类似" class="level2">
 <h2 class="anchored" data-anchor-id="newton-schulz-method牛顿法的矩阵类似">Newton-Schulz Method：牛顿法的矩阵类似</h2>
 <p><strong>Motivation</strong>：把原本的矩阵逐渐迭代成正交阵 <strong>一次迭代</strong>： <img src="https://latex.codecogs.com/png.latex?%0A%5Cbegin%7Baligned%7D%0AG'%20&amp;:=%20aG%20+%20b(GG%5E%5Ctop)G%20+%20c(GG%5E%5Ctop)%5E2%20G%20%5C%5C%0A%20%20%20&amp;=%20(aI%20+%20b(GG%5E%5Ctop)%20+%20c(GG%5E%5Ctop)%5E2)G%20%5C%5C%0A%20%20%20&amp;=%20(aI%20+%20bUS%5E2U%5E%5Ctop%20+%20cUS%5E4U%5E%5Ctop)USV%5E%5Ctop%20%5C%5C%0A%20%20%20&amp;=%20U(aS%20+%20bS%5E3%20+%20cS%5E5)V%5E%5Ctop%0A%5Cend%7Baligned%7D%0A"></p>
-<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img src="https://yourname.github.io/images/newton_schulz_method.png" class="img-fluid" alt="Newton_Method"></p>
+<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img src="https://yourname.github.io/images/newton_schulz_method.png" class="img-fluid" style="width:60.0%" alt="Newton_Method"></p>
 </section>
 <section id="muon-optimizer-1" class="level2">
 <h2 class="anchored" data-anchor-id="muon-optimizer-1">Muon Optimizer</h2>
@@ -159,7 +159,16 @@ font-style: inherit;">=</span> X.T</span>
 background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> X</span></code></pre></div>
-<p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化</p>
+<p><strong>应用上述Newton-Schulz的充分条件</strong>：</p>
+<ul>
+<li><p>初始G的奇异值范围在[0,1]之间，所以每次会除以F范数</p></li>
+<li><p>当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c</p></li>
+</ul>
+<p><strong>完整算法</strong></p>
+<ul>
+<li><p>第四行：加momentum</p></li>
+<li><p>第五行：正交化</p></li>
+</ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
