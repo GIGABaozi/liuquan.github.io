@@ -24,7 +24,7 @@ format:
 - 当前的updates matrics呈现出low-rank matrices，此方法可以增加多样性（和我之前研究相符、值得进一步研究）
 
 ## Newton Method：切线找根
-![Newton_Method](../images/newton_method.png)
+![Newton_Method](../images/newton_method.png){width=60%}
 
 ## Newton-Schulz Method：牛顿法的矩阵类似
 
@@ -42,7 +42,7 @@ $$
 
 其中第二行到第三行应用了SVD分解
 **原理**：中间的奇异值S逐渐趋近于1
-![Newton_Method](../images/newton_schulz_method.png)
+![Newton_Method](../images/newton_schulz_method.png){width=60%}
 
 ## Muon Optimizer
 
@@ -65,10 +65,15 @@ def newtonschulz5(G, steps=5, eps=1e-7):
 ```
 
 **应用上述Newton-Schulz的充分条件**：
+
 - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 
+
 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c
+
 **完整算法**
+
 - 第四行：加momentum
+
 - 第五行：正交化
 
 ::: {.callout-note}
