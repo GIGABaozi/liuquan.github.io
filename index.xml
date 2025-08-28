@@ -12,7 +12,7 @@
 <generator>quarto-1.5.57</generator>
 <lastBuildDate>Wed, 27 Aug 2025 00:00:00 GMT</lastBuildDate>
 <item>
-  <title>Hello Quarto!</title>
+  <title>Adam Optimizer</title>
   <link>https://yourname.github.io/posts/welcome.html</link>
   <description><![CDATA[ 
 
@@ -23,12 +23,18 @@
 <p>支持数学公式：<br>
 <img src="https://latex.codecogs.com/png.latex?E%20=%20mc%5E2"></p>
 <p>支持多行公式： <img src="https://latex.codecogs.com/png.latex?%0A%5CDelta%20f(x)%20=%20%5Csum_%7Bi=1%7D%5En%20%5Cfrac%7B%5Cpartial%5E2%20f%7D%7B%5Cpartial%20x_i%5E2%7D(x)%0A"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://yourname.github.io/posts/images/diagram.png" class="img-fluid figure-img"></p>
+<figcaption>我的示意图</figcaption>
+</figure>
+</div>
 
 
 
  ]]></description>
-  <category>测试</category>
-  <category>Quarto</category>
+  <category>RL</category>
+  <category>Optimizer</category>
   <guid>https://yourname.github.io/posts/welcome.html</guid>
   <pubDate>Wed, 27 Aug 2025 00:00:00 GMT</pubDate>
 </item>
