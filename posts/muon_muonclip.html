@@ -104,6 +104,35 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -221,12 +250,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><strong>Motivation</strong>：把原始梯度矩阵换成一个正交阵 <strong>方法</strong>：应用Newton-Schulz matrix iteration <strong>优势</strong>： - 不用做SVD分解，很方便 - 当前的updates matrics呈现出low-rank matrices，此方法可以增加多样性（和我之前研究相符、值得进一步研究）</p>
 <section id="newton-method切线找根" class="level2">
 <h2 class="anchored" data-anchor-id="newton-method切线找根">Newton Method：切线找根</h2>
-<p><img width="1205" height="780" alt="image" src="https://github.com/user-attachments/assets/77ea9e2d-c267-4318-95cf-b3a684d54ac0"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/newton_method.png" class="img-fluid figure-img"></p>
+<figcaption>Newton_Method</figcaption>
+</figure>
+</div>
 </section>
 <section id="newton-schulz-method牛顿法的矩阵类似" class="level2">
 <h2 class="anchored" data-anchor-id="newton-schulz-method牛顿法的矩阵类似">Newton-Schulz Method：牛顿法的矩阵类似</h2>
-<p><strong>Motivation</strong>：把原本的矩阵逐渐迭代成正交阵 <strong>一次迭代</strong>： <img width="376" height="134" alt="image" src="https://github.com/user-attachments/assets/754a8c97-fd48-4eaf-851d-8d9c271fa2c7"></p>
-<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img width="728" height="415" alt="image" src="https://github.com/user-attachments/assets/868dce11-9683-4a2a-978d-9db8bebf02b2"></p>
+<p><strong>Motivation</strong>：把原本的矩阵逐渐迭代成正交阵 <strong>一次迭代</strong>： <span class="math display">\[
+\begin{aligned}
+G' &amp;:= aG + b(GG^\top)G + c(GG^\top)^2 G \\
+   &amp;= (aI + b(GG^\top) + c(GG^\top)^2)G \\
+   &amp;= (aI + bUS^2U^\top + cUS^4U^\top)USV^\top \\
+   &amp;= U(aS + bS^3 + cS^5)V^\top
+\end{aligned}
+\]</span></p>
+<p>其中第二行到第三行应用了SVD分解 <strong>原理</strong>：中间的奇异值S逐渐趋近于1 <img src="../images/newton_schulz_method.png" class="img-fluid" alt="Newton_Method"></p>
 </section>
 <section id="muon-optimizer-1" class="level2">
 <h2 class="anchored" data-anchor-id="muon-optimizer-1">Muon Optimizer</h2>
@@ -245,17 +286,17 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> G.size(<span class="dv">0</span>) <span class="op">&gt;</span> G.size(<span class="dv">1</span>):</span>
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X.T</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化 <img width="726" height="457" alt="image" src="https://github.com/user-attachments/assets/e9add655-6526-448f-903c-bc78dd47b583"></p>
+<p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化</p>
 </section>
 </section>
 <section id="muonclip-optimizer" class="level1">
 <h1>MuonClip Optimizer</h1>
-<p><img width="1089" height="530" alt="image" src="https://github.com/user-attachments/assets/4b627c08-3411-40cc-ab92-9d0304ee202c"></p>
+<p><strong>Motivation</strong>：修剪更新后的<span class="math inline">\(W_q\)</span>$W_k$矩阵，将其范数控制在1以内</p>
 </section>
 <section id="关于正交化的讨论" class="level1">
 <h1>关于正交化的讨论</h1>
 <p><strong>muon观察到</strong>：用SGD-momentum and Adam更新时得到的梯度矩阵大都是high condition number，也就是最大奇异值和最小奇异值的比值很大。换句话说，可以近似地将梯度矩阵看成一个低秩矩阵，low-rank matrices。</p>
-<p>我的上次实验： <img width="810" height="283" alt="image" src="https://github.com/user-attachments/assets/f08f5fab-4886-4952-a92f-a06739d945e5"></p>
+<p>我的上次实验： <img src="../images/FLowLens.png" class="img-fluid" alt="FLowLens"></p>
 </section>
 <section id="来源" class="level1">
 <h1>来源</h1>

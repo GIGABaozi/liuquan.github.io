@@ -18,14 +18,14 @@
     "href": "posts/muon_muonclip.html#newton-method切线找根",
     "title": "Muon Optimizer",
     "section": "Newton Method：切线找根",
-    "text": "Newton Method：切线找根"
+    "text": "Newton Method：切线找根\n\n\n\nNewton_Method"
   },
   {
     "objectID": "posts/muon_muonclip.html#newton-schulz-method牛顿法的矩阵类似",
     "href": "posts/muon_muonclip.html#newton-schulz-method牛顿法的矩阵类似",
     "title": "Muon Optimizer",
     "section": "Newton-Schulz Method：牛顿法的矩阵类似",
-    "text": "Newton-Schulz Method：牛顿法的矩阵类似\nMotivation：把原本的矩阵逐渐迭代成正交阵 一次迭代： \n其中第二行到第三行应用了SVD分解 原理：中间的奇异值S逐渐趋近于1"
+    "text": "Newton-Schulz Method：牛顿法的矩阵类似\nMotivation：把原本的矩阵逐渐迭代成正交阵 一次迭代： \\[\n\\begin{aligned}\nG' &:= aG + b(GG^\\top)G + c(GG^\\top)^2 G \\\\\n   &= (aI + b(GG^\\top) + c(GG^\\top)^2)G \\\\\n   &= (aI + bUS^2U^\\top + cUS^4U^\\top)USV^\\top \\\\\n   &= U(aS + bS^3 + cS^5)V^\\top\n\\end{aligned}\n\\]\n其中第二行到第三行应用了SVD分解 原理：中间的奇异值S逐渐趋近于1"
   },
   {
     "objectID": "posts/muon_muonclip.html#muon-optimizer-1",
