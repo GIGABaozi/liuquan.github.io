@@ -287,11 +287,53 @@ G' &amp;:= aG + b(GG^\top)G + c(GG^\top)^2 G \\
 <span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>        X <span class="op">=</span> X.T</span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> X</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithm Muon
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Require:</strong> Learning rate <span class="math inline">\(\eta\)</span>, momentum <span class="math inline">\(\mu\)</span></p>
+<ol type="1">
+<li>Initialize <span class="math inline">\(B_0 \gets 0\)</span><br>
+</li>
+<li>For <span class="math inline">\(t = 1, \dots\)</span> do
+<ul>
+<li>Compute <span class="math inline">\(G_t \gets \nabla_\theta \mathcal{L}_t(\theta_{t-1})\)</span><br>
+</li>
+<li><span class="math inline">\(B_t \gets \mu B_{t-1} + G_t\)</span><br>
+</li>
+<li><span class="math inline">\(O_t \gets \text{NewtonSchulz5}(B_t)\)</span><br>
+</li>
+<li>Update <span class="math inline">\(\theta_t \gets \theta_{t-1} - \eta O_t\)</span><br>
+</li>
+</ul></li>
+<li>return <span class="math inline">\(\theta_t\)</span></li>
+</ol>
+</div>
+</div>
 </section>
 </section>
 <section id="muonclip-optimizer" class="level1">
 <h1>MuonClip Optimizer</h1>
-<p><strong>Motivation</strong>：修剪更新后的<span class="math inline">\(W_q\)</span>$W_k$矩阵，将其范数控制在1以内</p>
+<p><strong>Motivation</strong>：直接修改更新后的<span class="math inline">\(W_q\)</span>$W_k$参数矩阵。这一步与之前的操作无关。</p>
+<p><strong>qk-clip 技术</strong>：放缩Q、K矩阵，将两个矩阵的范数控制在一定范围内。：</p>
+<p><span class="math display">\[
+q_i = \eta^\alpha W_q x_i, \quad k_i = \eta^{1-\alpha} W_k x_i
+\]</span></p>
+<p>其中 <span class="math inline">\(\alpha\)</span> 为平衡Q与K的超参：</p>
+<p><span class="math display">\[
+(\eta^\alpha q_i)^\top (\eta^{1-\alpha} k_j) = \eta q_i^\top k_j
+\]</span></p>
+<p>自适应因子 <span class="math inline">\(\eta\)</span>（阈值 <span class="math inline">\(t\)</span>）在每步根据最大值：</p>
+<p><span class="math display">\[
+\eta = \min\left(\frac{t}{\max_{i,j}(q_i^\top k_j)},1\right)
+\]</span></p>
+<p>其中 <span class="math inline">\(t\)</span> 是超参。</p>
 </section>
 <section id="关于正交化的讨论" class="level1">
 <h1>关于正交化的讨论</h1>

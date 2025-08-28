@@ -160,11 +160,47 @@ background-color: null;
 font-weight: bold;
 font-style: inherit;">return</span> X</span></code></pre></div>
 <p><strong>应用上述Newton-Schulz的充分条件</strong>： - 初始G的奇异值范围在[0,1]之间，所以每次会除以F范数 - 当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c <strong>完整算法</strong> - 第四行：加momentum - 第五行：正交化</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Algorithm Muon
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Require:</strong> Learning rate <img src="https://latex.codecogs.com/png.latex?%5Ceta">, momentum <img src="https://latex.codecogs.com/png.latex?%5Cmu"></p>
+<ol type="1">
+<li>Initialize <img src="https://latex.codecogs.com/png.latex?B_0%20%5Cgets%200"><br>
+</li>
+<li>For <img src="https://latex.codecogs.com/png.latex?t%20=%201,%20%5Cdots"> do
+<ul>
+<li>Compute <img src="https://latex.codecogs.com/png.latex?G_t%20%5Cgets%20%5Cnabla_%5Ctheta%20%5Cmathcal%7BL%7D_t(%5Ctheta_%7Bt-1%7D)"><br>
+</li>
+<li><img src="https://latex.codecogs.com/png.latex?B_t%20%5Cgets%20%5Cmu%20B_%7Bt-1%7D%20+%20G_t"><br>
+</li>
+<li><img src="https://latex.codecogs.com/png.latex?O_t%20%5Cgets%20%5Ctext%7BNewtonSchulz5%7D(B_t)"><br>
+</li>
+<li>Update <img src="https://latex.codecogs.com/png.latex?%5Ctheta_t%20%5Cgets%20%5Ctheta_%7Bt-1%7D%20-%20%5Ceta%20O_t"><br>
+</li>
+</ul></li>
+<li>return <img src="https://latex.codecogs.com/png.latex?%5Ctheta_t"></li>
+</ol>
+</div>
+</div>
 </section>
 </section>
 <section id="muonclip-optimizer" class="level1">
 <h1>MuonClip Optimizer</h1>
-<p><strong>Motivation</strong>：修剪更新后的<img src="https://latex.codecogs.com/png.latex?W_q">$W_k$矩阵，将其范数控制在1以内</p>
+<p><strong>Motivation</strong>：直接修改更新后的<img src="https://latex.codecogs.com/png.latex?W_q">$W_k$参数矩阵。这一步与之前的操作无关。</p>
+<p><strong>qk-clip 技术</strong>：放缩Q、K矩阵，将两个矩阵的范数控制在一定范围内。：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0Aq_i%20=%20%5Ceta%5E%5Calpha%20W_q%20x_i,%20%5Cquad%20k_i%20=%20%5Ceta%5E%7B1-%5Calpha%7D%20W_k%20x_i%0A"></p>
+<p>其中 <img src="https://latex.codecogs.com/png.latex?%5Calpha"> 为平衡Q与K的超参：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A(%5Ceta%5E%5Calpha%20q_i)%5E%5Ctop%20(%5Ceta%5E%7B1-%5Calpha%7D%20k_j)%20=%20%5Ceta%20q_i%5E%5Ctop%20k_j%0A"></p>
+<p>自适应因子 <img src="https://latex.codecogs.com/png.latex?%5Ceta">（阈值 <img src="https://latex.codecogs.com/png.latex?t">）在每步根据最大值：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%0A%5Ceta%20=%20%5Cmin%5Cleft(%5Cfrac%7Bt%7D%7B%5Cmax_%7Bi,j%7D(q_i%5E%5Ctop%20k_j)%7D,1%5Cright)%0A"></p>
+<p>其中 <img src="https://latex.codecogs.com/png.latex?t"> 是超参。</p>
 </section>
 <section id="关于正交化的讨论" class="level1">
 <h1>关于正交化的讨论</h1>
