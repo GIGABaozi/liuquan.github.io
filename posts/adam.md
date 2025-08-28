@@ -17,10 +17,10 @@ categories: [RL, Optimizer]
 $$\theta_t = \theta_{t-1} - \eta \cdot \frac{\hat{m_t}}{\sqrt{\hat{v_t}} + \epsilon}$$
 
 - 一阶矩（动量）更新：
-$$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$$
+$$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$$, $$m_0 = 0$$
 
 - 二阶矩（方差）更新：
-$$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$$
+$$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$$, $$v_0 = 0$$
 
 - 偏差校正：
 $$\hat{m_t} = \frac{m_t}{1-\beta_1^t}, \quad \hat{v_t} = \frac{v_t}{1-\beta_2^t}$$
@@ -36,6 +36,9 @@ $\eta, \epsilon, \beta_1, \beta_2$
 
 # 感性理解
 
+- 一阶矩控制更新方向，二阶矩控制更新速度
+- 可以把一阶矩$$m_t$$看成是梯度的一种
+- $\beta_1, \beta_2$一般设做$0.9, 0.999$，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减
 
 
 
