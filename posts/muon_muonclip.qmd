@@ -21,17 +21,25 @@ categories: [RL, Optimizer]
 - 当前的updates matrics呈现出low-rank matrices，此方法可以增加多样性（和我之前研究相符、值得进一步研究）
 
 ## Newton Method：切线找根
-<img width="1205" height="780" alt="image" src="https://github.com/user-attachments/assets/77ea9e2d-c267-4318-95cf-b3a684d54ac0" />
+![Newton_Method](../images/newton_method.png)
 
 ## Newton-Schulz Method：牛顿法的矩阵类似
 
 **Motivation**：把原本的矩阵逐渐迭代成正交阵
 **一次迭代**：
-<img width="376" height="134" alt="image" src="https://github.com/user-attachments/assets/754a8c97-fd48-4eaf-851d-8d9c271fa2c7" />
+$$
+\begin{aligned}
+G' &:= aG + b(GG^\top)G + c(GG^\top)^2 G \\
+   &= (aI + b(GG^\top) + c(GG^\top)^2)G \\
+   &= (aI + bUS^2U^\top + cUS^4U^\top)USV^\top \\
+   &= U(aS + bS^3 + cS^5)V^\top
+\end{aligned}
+$$
+
 
 其中第二行到第三行应用了SVD分解
 **原理**：中间的奇异值S逐渐趋近于1
-<img width="728" height="415" alt="image" src="https://github.com/user-attachments/assets/868dce11-9683-4a2a-978d-9db8bebf02b2" />
+![Newton_Method](../images/newton_schulz_method.png)
 
 ## Muon Optimizer
 
@@ -59,17 +67,18 @@ def newtonschulz5(G, steps=5, eps=1e-7):
 **完整算法**
 - 第四行：加momentum
 - 第五行：正交化
-<img width="726" height="457" alt="image" src="https://github.com/user-attachments/assets/e9add655-6526-448f-903c-bc78dd47b583" />
+
 
 # MuonClip Optimizer
-<img width="1089" height="530" alt="image" src="https://github.com/user-attachments/assets/4b627c08-3411-40cc-ab92-9d0304ee202c" />
+**Motivation**：修剪更新后的$W_q$\$W_k$矩阵，将其范数控制在1以内
+
 
 # 关于正交化的讨论
 
 **muon观察到**：用SGD-momentum and Adam更新时得到的梯度矩阵大都是high condition number，也就是最大奇异值和最小奇异值的比值很大。换句话说，可以近似地将梯度矩阵看成一个低秩矩阵，low-rank matrices。
 
 我的上次实验：
-<img width="810" height="283" alt="image" src="https://github.com/user-attachments/assets/f08f5fab-4886-4952-a92f-a06739d945e5" />
+![FLowLens](../images/FLowLens.png)
 
 # 来源
 - muon: https://kellerjordan.github.io/posts/muon/
