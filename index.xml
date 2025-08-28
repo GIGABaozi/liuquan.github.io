@@ -13,29 +13,45 @@
 <lastBuildDate>Wed, 27 Aug 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Adam Optimizer</title>
-  <link>https://yourname.github.io/posts/welcome.html</link>
+  <link>https://yourname.github.io/posts/adam.html</link>
   <description><![CDATA[ 
 
 
 
 
-<p>这是我的第一篇 Quarto 博文。</p>
-<p>支持数学公式：<br>
-<img src="https://latex.codecogs.com/png.latex?E%20=%20mc%5E2"></p>
-<p>支持多行公式： <img src="https://latex.codecogs.com/png.latex?%0A%5CDelta%20f(x)%20=%20%5Csum_%7Bi=1%7D%5En%20%5Cfrac%7B%5Cpartial%5E2%20f%7D%7B%5Cpartial%20x_i%5E2%7D(x)%0A"></p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://yourname.github.io/posts/images/test.png" class="img-fluid figure-img"></p>
-<figcaption>我的示意图</figcaption>
+<p><img src="https://yourname.github.io/images/test.png" class="img-fluid figure-img"></p>
+<figcaption>猫猫镇楼</figcaption>
 </figure>
 </div>
+<p>这篇博文是讲Adam优化器，Adaptive Moment Estimation</p>
+<section id="基本介绍" class="level1">
+<h1>基本介绍</h1>
+<p><strong>核心想法</strong>：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。</p>
+<p>公式为：</p>
+<p><img src="https://latex.codecogs.com/png.latex?%5Ctheta_t%20=%20%5Ctheta_%7Bt-1%7D%20-%20%5Ceta%20%5Ccdot%20%5Cfrac%7B%5Chat%7Bm_t%7D%7D%7B%5Csqrt%7B%5Chat%7Bv_t%7D%7D%20+%20%5Cepsilon%7D"></p>
+<ul>
+<li><p>一阶矩（动量）更新： <img src="https://latex.codecogs.com/png.latex?m_t%20=%20%5Cbeta_1%20m_%7Bt-1%7D%20+%20(1-%5Cbeta_1)%20g_t"></p></li>
+<li><p>二阶矩（方差）更新： <img src="https://latex.codecogs.com/png.latex?v_t%20=%20%5Cbeta_2%20v_%7Bt-1%7D%20+%20(1-%5Cbeta_2)%20g_t%5E2"></p></li>
+<li><p>偏差校正： <img src="https://latex.codecogs.com/png.latex?%5Chat%7Bm_t%7D%20=%20%5Cfrac%7Bm_t%7D%7B1-%5Cbeta_1%5Et%7D,%20%5Cquad%20%5Chat%7Bv_t%7D%20=%20%5Cfrac%7Bv_t%7D%7B1-%5Cbeta_2%5Et%7D"></p></li>
+</ul>
+<p>符号说明：</p>
+<ul>
+<li><p>梯度： <img src="https://latex.codecogs.com/png.latex?g_t"></p></li>
+<li><p>超参（意味着与核心公式无关）： <img src="https://latex.codecogs.com/png.latex?%5Ceta,%20%5Cepsilon,%20%5Cbeta_1,%20%5Cbeta_2"></p></li>
+</ul>
+</section>
+<section id="感性理解" class="level1">
+<h1>感性理解</h1>
 
 
+</section>
 
  ]]></description>
   <category>RL</category>
   <category>Optimizer</category>
-  <guid>https://yourname.github.io/posts/welcome.html</guid>
+  <guid>https://yourname.github.io/posts/adam.html</guid>
   <pubDate>Wed, 27 Aug 2025 00:00:00 GMT</pubDate>
 </item>
 </channel>

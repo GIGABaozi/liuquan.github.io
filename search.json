@@ -1,10 +1,10 @@
 [
   {
-    "objectID": "posts/welcome.html",
-    "href": "posts/welcome.html",
+    "objectID": "posts/adam.html",
+    "href": "posts/adam.html",
     "title": "Adam Optimizer",
     "section": "",
-    "text": "这是我的第一篇 Quarto 博文。\n支持数学公式：\n\\(E = mc^2\\)\n支持多行公式： \\[\n\\Delta f(x) = \\sum_{i=1}^n \\frac{\\partial^2 f}{\\partial x_i^2}(x)\n\\]\n\n\n\n我的示意图"
+    "text": "猫猫镇楼\n\n\n这篇博文是讲Adam优化器，Adaptive Moment Estimation\n\n基本介绍\n核心想法：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。\n公式为：\n\\[\\theta_t = \\theta_{t-1} - \\eta \\cdot \\frac{\\hat{m_t}}{\\sqrt{\\hat{v_t}} + \\epsilon}\\]\n\n一阶矩（动量）更新： \\[m_t = \\beta_1 m_{t-1} + (1-\\beta_1) g_t\\]\n二阶矩（方差）更新： \\[v_t = \\beta_2 v_{t-1} + (1-\\beta_2) g_t^2\\]\n偏差校正： \\[\\hat{m_t} = \\frac{m_t}{1-\\beta_1^t}, \\quad \\hat{v_t} = \\frac{v_t}{1-\\beta_2^t}\\]\n\n符号说明：\n\n梯度： \\(g_t\\)\n超参（意味着与核心公式无关）： \\(\\eta, \\epsilon, \\beta_1, \\beta_2\\)\n\n\n\n感性理解"
   },
   {
     "objectID": "index.html",
