@@ -206,8 +206,8 @@ window.Quarto = {
 <p>公式为：</p>
 <p><span class="math display">\[\theta_t = \theta_{t-1} - \eta \cdot \frac{\hat{m_t}}{\sqrt{\hat{v_t}} + \epsilon}\]</span></p>
 <ul>
-<li><p>一阶矩（动量）更新： <span class="math display">\[m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t\]</span>, <span class="math display">\[m_0 = 0\]</span></p></li>
-<li><p>二阶矩（方差）更新： <span class="math display">\[v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2\]</span>, <span class="math display">\[v_0 = 0\]</span></p></li>
+<li><p>一阶矩（动量）更新： <span class="math display">\[m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t, \quad m_0 = 0\]</span></p></li>
+<li><p>二阶矩（方差）更新： <span class="math display">\[v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2, \quad v_0 = 0\]</span></p></li>
 <li><p>偏差校正： <span class="math display">\[\hat{m_t} = \frac{m_t}{1-\beta_1^t}, \quad \hat{v_t} = \frac{v_t}{1-\beta_2^t}\]</span></p></li>
 </ul>
 <p>符号说明：</p>
@@ -220,7 +220,7 @@ window.Quarto = {
 <h1>感性理解</h1>
 <ul>
 <li>一阶矩控制更新方向，二阶矩控制更新速度</li>
-<li>一阶矩<span class="math display">\[m_t\]</span>也是一种梯度，是过往梯度的“融合”。<span class="math inline">\(\beta_1\)</span>一般设做<span class="math inline">\(0.9\)</span>，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减</li>
+<li>一阶矩<span class="math inline">\(m_t\)</span>也是一种梯度，是过往梯度的“融合”。<span class="math inline">\(\beta_1\)</span>一般设做<span class="math inline">\(0.9\)</span>，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减</li>
 </ul>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
