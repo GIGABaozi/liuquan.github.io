@@ -46,9 +46,14 @@
 <h1>感性理解</h1>
 <ul>
 <li>一阶矩控制更新方向，二阶矩控制更新速度</li>
-<li>可以把一阶矩<img src="https://latex.codecogs.com/png.latex?m_t">看成是梯度的一种</li>
-<li><img src="https://latex.codecogs.com/png.latex?%5Cbeta_1,%20%5Cbeta_2">一般设做<img src="https://latex.codecogs.com/png.latex?0.9,%200.999">，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减</li>
+<li>一阶矩<img src="https://latex.codecogs.com/png.latex?m_t">也是一种梯度，是过往梯度的“融合”。<img src="https://latex.codecogs.com/png.latex?%5Cbeta_1">一般设做<img src="https://latex.codecogs.com/png.latex?0.9">，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减</li>
 </ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://yourname.github.io/images/adam_gradient_explain.png" class="img-fluid figure-img"></p>
+<figcaption>梯度在更新中的贡献</figcaption>
+</figure>
+</div>
 
 
 </section>

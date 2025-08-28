@@ -11,6 +11,6 @@
     "href": "posts/adam.html",
     "title": "Adam Optimizer",
     "section": "",
-    "text": "猫猫镇楼\n\n\n这篇博文是讲Adam优化器，Adaptive Moment Estimation\n\n基本介绍\n核心想法：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。\n公式为：\n\\[\\theta_t = \\theta_{t-1} - \\eta \\cdot \\frac{\\hat{m_t}}{\\sqrt{\\hat{v_t}} + \\epsilon}\\]\n\n一阶矩（动量）更新： \\[m_t = \\beta_1 m_{t-1} + (1-\\beta_1) g_t\\], \\[m_0 = 0\\]\n二阶矩（方差）更新： \\[v_t = \\beta_2 v_{t-1} + (1-\\beta_2) g_t^2\\], \\[v_0 = 0\\]\n偏差校正： \\[\\hat{m_t} = \\frac{m_t}{1-\\beta_1^t}, \\quad \\hat{v_t} = \\frac{v_t}{1-\\beta_2^t}\\]\n\n符号说明：\n\n梯度： \\(g_t\\)\n超参（意味着与核心公式无关）： \\(\\eta, \\epsilon, \\beta_1, \\beta_2\\)\n\n\n\n感性理解\n\n一阶矩控制更新方向，二阶矩控制更新速度\n可以把一阶矩\\[m_t\\]看成是梯度的一种\n\\(\\beta_1, \\beta_2\\)一般设做\\(0.9, 0.999\\)，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减"
+    "text": "猫猫镇楼\n\n\n这篇博文是讲Adam优化器，Adaptive Moment Estimation\n\n基本介绍\n核心想法：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。\n公式为：\n\\[\\theta_t = \\theta_{t-1} - \\eta \\cdot \\frac{\\hat{m_t}}{\\sqrt{\\hat{v_t}} + \\epsilon}\\]\n\n一阶矩（动量）更新： \\[m_t = \\beta_1 m_{t-1} + (1-\\beta_1) g_t\\], \\[m_0 = 0\\]\n二阶矩（方差）更新： \\[v_t = \\beta_2 v_{t-1} + (1-\\beta_2) g_t^2\\], \\[v_0 = 0\\]\n偏差校正： \\[\\hat{m_t} = \\frac{m_t}{1-\\beta_1^t}, \\quad \\hat{v_t} = \\frac{v_t}{1-\\beta_2^t}\\]\n\n符号说明：\n\n梯度： \\(g_t\\)\n超参（意味着与核心公式无关）： \\(\\eta, \\epsilon, \\beta_1, \\beta_2\\)\n\n\n\n感性理解\n\n一阶矩控制更新方向，二阶矩控制更新速度\n一阶矩\\[m_t\\]也是一种梯度，是过往梯度的“融合”。\\(\\beta_1\\)一般设做\\(0.9\\)，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减\n\n\n\n\n梯度在更新中的贡献"
   }
 ]
