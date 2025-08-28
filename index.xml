@@ -10,7 +10,35 @@
 <atom:link href="https://yourname.github.io/index.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Wed, 27 Aug 2025 00:00:00 GMT</lastBuildDate>
+<lastBuildDate>Thu, 28 Aug 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Muon Optimizer</title>
+  <link>https://yourname.github.io/posts/muon.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://yourname.github.io/images/test.png" class="img-fluid figure-img"></p>
+<figcaption>猫猫镇楼</figcaption>
+</figure>
+</div>
+<p>这篇博文是讲Adam优化器，Adaptive Moment Estimation</p>
+<section id="基本介绍" class="level1">
+<h1>基本介绍</h1>
+<p><strong>核心想法</strong>：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。</p>
+
+
+</section>
+
+ ]]></description>
+  <category>RL</category>
+  <category>Optimizer</category>
+  <guid>https://yourname.github.io/posts/muon.html</guid>
+  <pubDate>Thu, 28 Aug 2025 00:00:00 GMT</pubDate>
+</item>
 <item>
   <title>Adam Optimizer</title>
   <link>https://yourname.github.io/posts/adam.html</link>
