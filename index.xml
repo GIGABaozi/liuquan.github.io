@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss  xmlns:atom="http://www.w3.org/2005/Atom" 
+      xmlns:media="http://search.yahoo.com/mrss/" 
+      xmlns:content="http://purl.org/rss/1.0/modules/content/" 
+      xmlns:dc="http://purl.org/dc/elements/1.1/" 
+      version="2.0">
+<channel>
+<title>我的科研博客</title>
+<link>https://yourname.github.io/</link>
+<atom:link href="https://yourname.github.io/index.xml" rel="self" type="application/rss+xml"/>
+<description></description>
+<generator>quarto-1.5.57</generator>
+<lastBuildDate>Wed, 27 Aug 2025 00:00:00 GMT</lastBuildDate>
+<item>
+  <title>Hello Quarto!</title>
+  <link>https://yourname.github.io/posts/welcome.html</link>
+  <description><![CDATA[ 
+
+
+
+
+<p>这是我的第一篇 Quarto 博文。</p>
+<p>支持数学公式：<br>
+<img src="https://latex.codecogs.com/png.latex?E%20=%20mc%5E2"></p>
+<p>支持多行公式： <img src="https://latex.codecogs.com/png.latex?%0A%5CDelta%20f(x)%20=%20%5Csum_%7Bi=1%7D%5En%20%5Cfrac%7B%5Cpartial%5E2%20f%7D%7B%5Cpartial%20x_i%5E2%7D(x)%0A"></p>
+
+
+
+ ]]></description>
+  <category>测试</category>
+  <category>Quarto</category>
+  <guid>https://yourname.github.io/posts/welcome.html</guid>
+  <pubDate>Wed, 27 Aug 2025 00:00:00 GMT</pubDate>
+</item>
+</channel>
+</rss>
