@@ -4,7 +4,7 @@ date: 2025-08-27
 categories: [RL, Optimizer]
 ---
 
-![猫猫镇楼](../images/test.png)
+![猫猫镇楼](../images/test.png){fig-align="center"}
 
 这篇博文是讲Adam优化器，Adaptive Moment Estimation
 
@@ -17,10 +17,10 @@ categories: [RL, Optimizer]
 $$\theta_t = \theta_{t-1} - \eta \cdot \frac{\hat{m_t}}{\sqrt{\hat{v_t}} + \epsilon}$$
 
 - 一阶矩（动量）更新：
-$$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t$$, $$m_0 = 0$$
+$$m_t = \beta_1 m_{t-1} + (1-\beta_1) g_t, \quad m_0 = 0$$
 
 - 二阶矩（方差）更新：
-$$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2$$, $$v_0 = 0$$
+$$v_t = \beta_2 v_{t-1} + (1-\beta_2) g_t^2, \quad v_0 = 0$$
 
 - 偏差校正：
 $$\hat{m_t} = \frac{m_t}{1-\beta_1^t}, \quad \hat{v_t} = \frac{v_t}{1-\beta_2^t}$$
@@ -37,9 +37,9 @@ $\eta, \epsilon, \beta_1, \beta_2$
 # 感性理解
 
 - 一阶矩控制更新方向，二阶矩控制更新速度
-- 一阶矩$$m_t$$也是一种梯度，是过往梯度的“融合”。$\beta_1$一般设做$0.9$，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减
+- 一阶矩$m_t$也是一种梯度，是过往梯度的“融合”。$\beta_1$一般设做$0.9$，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减
 
-![梯度在更新中的贡献](../images/adam_gradient_explain.png)
+![梯度在更新中的贡献](../images/adam_gradient_explain.png){fig-align="center"}
 
 
 
