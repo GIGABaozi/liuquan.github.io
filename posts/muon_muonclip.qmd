@@ -2,6 +2,9 @@
 title: "Muon Optimizer"
 date: 2025-08-28
 categories: [RL, Optimizer]
+format:
+  pdf:
+    include-in-header: preamble.tex
 ---
 
 ![猫猫镇楼](../images/maomao2.png)
