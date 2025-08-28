@@ -32,8 +32,8 @@
 <p>公式为：</p>
 <p><img src="https://latex.codecogs.com/png.latex?%5Ctheta_t%20=%20%5Ctheta_%7Bt-1%7D%20-%20%5Ceta%20%5Ccdot%20%5Cfrac%7B%5Chat%7Bm_t%7D%7D%7B%5Csqrt%7B%5Chat%7Bv_t%7D%7D%20+%20%5Cepsilon%7D"></p>
 <ul>
-<li><p>一阶矩（动量）更新： <img src="https://latex.codecogs.com/png.latex?m_t%20=%20%5Cbeta_1%20m_%7Bt-1%7D%20+%20(1-%5Cbeta_1)%20g_t"></p></li>
-<li><p>二阶矩（方差）更新： <img src="https://latex.codecogs.com/png.latex?v_t%20=%20%5Cbeta_2%20v_%7Bt-1%7D%20+%20(1-%5Cbeta_2)%20g_t%5E2"></p></li>
+<li><p>一阶矩（动量）更新： <img src="https://latex.codecogs.com/png.latex?m_t%20=%20%5Cbeta_1%20m_%7Bt-1%7D%20+%20(1-%5Cbeta_1)%20g_t">, <img src="https://latex.codecogs.com/png.latex?m_0%20=%200"></p></li>
+<li><p>二阶矩（方差）更新： <img src="https://latex.codecogs.com/png.latex?v_t%20=%20%5Cbeta_2%20v_%7Bt-1%7D%20+%20(1-%5Cbeta_2)%20g_t%5E2">, <img src="https://latex.codecogs.com/png.latex?v_0%20=%200"></p></li>
 <li><p>偏差校正： <img src="https://latex.codecogs.com/png.latex?%5Chat%7Bm_t%7D%20=%20%5Cfrac%7Bm_t%7D%7B1-%5Cbeta_1%5Et%7D,%20%5Cquad%20%5Chat%7Bv_t%7D%20=%20%5Cfrac%7Bv_t%7D%7B1-%5Cbeta_2%5Et%7D"></p></li>
 </ul>
 <p>符号说明：</p>
@@ -44,6 +44,11 @@
 </section>
 <section id="感性理解" class="level1">
 <h1>感性理解</h1>
+<ul>
+<li>一阶矩控制更新方向，二阶矩控制更新速度</li>
+<li>可以把一阶矩<img src="https://latex.codecogs.com/png.latex?m_t">看成是梯度的一种</li>
+<li><img src="https://latex.codecogs.com/png.latex?%5Cbeta_1,%20%5Cbeta_2">一般设做<img src="https://latex.codecogs.com/png.latex?0.9,%200.999">，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减</li>
+</ul>
 
 
 </section>
