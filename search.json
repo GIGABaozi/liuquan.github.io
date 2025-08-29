@@ -11,28 +11,7 @@
     "href": "posts/DeepSeek-R1.html",
     "title": "Adam Optimizer",
     "section": "",
-    "text": "猫猫镇楼"
-  },
-  {
-    "objectID": "posts/DeepSeek-R1.html#代码数学训练集应该先训练",
-    "href": "posts/DeepSeek-R1.html#代码数学训练集应该先训练",
-    "title": "Adam Optimizer",
-    "section": "代码数学训练集应该先训练",
-    "text": "代码数学训练集应该先训练\n实验证明，先做代码训练再做数学训练，比从通用 LLM 开始更有利于推理能力"
-  },
-  {
-    "objectID": "posts/DeepSeek-R1.html#统一范式",
-    "href": "posts/DeepSeek-R1.html#统一范式",
-    "title": "Adam Optimizer",
-    "section": "统一范式",
-    "text": "统一范式\n他们把 SFT、RFT、DPO、PPO、GRPO 放到一个统一框架下看待，强调这些方法本质上都是“简化版的 RL”"
-  },
-  {
-    "objectID": "posts/DeepSeek-R1.html#强化学习-rl-在做什么",
-    "href": "posts/DeepSeek-R1.html#强化学习-rl-在做什么",
-    "title": "Adam Optimizer",
-    "section": "强化学习 (RL) 在做什么",
-    "text": "强化学习 (RL) 在做什么\nRL 的作用更多是让输出分布更稳定，把正确答案更容易排在 Top-K，而不是提升“基本能力”"
+    "text": "猫猫镇楼\n\n\n\n结论\n这一章节Deepseek-R1的一些特别结论, 结论比较分散\n\n代码数学训练集应该先训练\n实验证明，先做代码训练再做数学训练，比从通用 LLM 开始更有利于推理能力\n\n\n统一范式\n他们把 SFT、RFT、DPO、PPO、GRPO 放到一个统一框架下看待，强调这些方法本质上都是“简化版的 RL”\n\n\n强化学习 (RL) 在做什么\nRL 的作用更多是让输出分布更稳定，把正确答案更容易排在 Top-K，而不是提升“基本能力”\n\n\n\nFollow的一些工作\nTinyZero\nsimpleRL-reason"
   },
   {
     "objectID": "posts/muon_muonclip.html",
