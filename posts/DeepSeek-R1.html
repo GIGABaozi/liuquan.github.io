@@ -6,8 +6,9 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="dcterms.date" content="2025-08-29">
 
-<title>首页 – Dors-Liu Quan的笔记</title>
+<title>Adam Optimizer – Dors-Liu Quan的笔记</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -23,26 +24,24 @@ ul.task-list li input[type="checkbox"] {
 </style>
 
 
-<script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
-<script src="site_libs/quarto-search/fuse.min.js"></script>
-<script src="site_libs/quarto-search/quarto-search.js"></script>
-<meta name="quarto:offset" content="./">
-<script src="site_libs/quarto-listing/list.min.js"></script>
-<script src="site_libs/quarto-listing/quarto-listing.js"></script>
-<script src="site_libs/quarto-html/quarto.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
-<script src="site_libs/bootstrap/bootstrap.min.js"></script>
-<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/quarto-nav/headroom.min.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../site_libs/bootstrap/bootstrap-dark.min.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -70,68 +69,10 @@ ul.task-list li input[type="checkbox"] {
     "search-label": "Search"
   }
 }</script>
-<script>
 
-  window.document.addEventListener("DOMContentLoaded", function (_event) {
-    const listingTargetEl = window.document.querySelector('#listing-listing .list');
-    if (!listingTargetEl) {
-      // No listing discovered, do not attach.
-      return; 
-    }
-
-    const options = {
-      valueNames: ['listing-date','listing-title','listing-author','listing-image','listing-description','listing-categories',{ data: ['index'] },{ data: ['categories'] },{ data: ['listing-date-sort'] },{ data: ['listing-file-modified-sort'] }],
-      
-      searchColumns: ["listing-date","listing-title","listing-author","listing-image","listing-description","listing-categories"],
-    };
-
-    window['quarto-listings'] = window['quarto-listings'] || {};
-    window['quarto-listings']['listing-listing'] = new List('listing-listing', options);
-
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  });
-
-  window.addEventListener('hashchange',() => {
-    if (window['quarto-listing-loaded']) {
-      window['quarto-listing-loaded']();
-    }
-  })
-  </script>
-
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
-<link rel="alternate" type="application/rss+xml" title="Dors-Liu Quan的笔记" href="posts.xml" data-external="1"></head>
+</head>
 
 <body class="nav-fixed">
 
@@ -140,7 +81,7 @@ window.Quarto = {
     <nav class="navbar navbar-expand-lg " data-bs-theme="dark">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container mx-auto">
-    <a class="navbar-brand" href="./index.html">
+    <a class="navbar-brand" href="../index.html">
     <span class="navbar-title">Dors-Liu Quan的笔记</span>
     </a>
   </div>
@@ -151,17 +92,17 @@ window.Quarto = {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link active" href="./posts.html" aria-current="page"> 
+    <a class="nav-link" href="../posts.html"> 
 <span class="menu-text">文章 &amp; 博客</span></a>
   </li>  
 </ul>
             <ul class="navbar-nav navbar-nav-scroll ms-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./about.qmd"> 
+    <a class="nav-link" href="../about.qmd"> 
 <span class="menu-text">关于我</span></a>
   </li>  
   <li class="nav-item compact">
-    <a class="nav-link" href="./index.xml"> <i class="bi bi-rss" role="img">
+    <a class="nav-link" href="../index.xml"> <i class="bi bi-rss" role="img">
 </i> 
 <span class="menu-text"></span></a>
   </li>  
@@ -178,21 +119,39 @@ window.Quarto = {
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
-    <h5 class="quarto-listing-category-title">Categories</h5><div class="quarto-listing-category category-default"><div class="category" data-category="">All <span class="quarto-category-count">(3)</span></div><div class="category" data-category="Optimizer">Optimizer <span class="quarto-category-count">(3)</span></div><div class="category" data-category="RL">RL <span class="quarto-category-count">(3)</span></div></div></div>
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#代码数学训练集应该先训练" id="toc-代码数学训练集应该先训练" class="nav-link active" data-scroll-target="#代码数学训练集应该先训练">代码数学训练集应该先训练</a></li>
+  <li><a href="#统一范式" id="toc-统一范式" class="nav-link" data-scroll-target="#统一范式">统一范式</a></li>
+  <li><a href="#强化学习-rl-在做什么" id="toc-强化学习-rl-在做什么" class="nav-link" data-scroll-target="#强化学习-rl-在做什么">强化学习 (RL) 在做什么</a></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">首页</h1>
-</div>
+<h1 class="title">Adam Optimizer</h1>
+  <div class="quarto-categories">
+    <div class="quarto-category">RL</div>
+    <div class="quarto-category">Optimizer</div>
+  </div>
+  </div>
 
 
 
 <div class="quarto-title-meta">
 
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">August 29, 2025</p>
+    </div>
+  </div>
   
     
   </div>
@@ -202,117 +161,29 @@ window.Quarto = {
 </header>
 
 
-<p>这里以后会写一些科研随笔、笔记和文章。</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="../images/maomao3.png" class="img-fluid figure-img"></p>
+<figcaption>猫猫镇楼</figcaption>
+</figure>
+</div>
+<p>这篇博文是讲Deepseek-R1的一些特别结论</p>
+<section id="代码数学训练集应该先训练" class="level1">
+<h1>代码数学训练集应该先训练</h1>
+<p>实验证明，先做代码训练再做数学训练，比从通用 LLM 开始更有利于推理能力</p>
+</section>
+<section id="统一范式" class="level1">
+<h1>统一范式</h1>
+<p>他们把 SFT、RFT、DPO、PPO、GRPO 放到一个统一框架下看待，强调这些方法本质上都是“简化版的 RL”</p>
+</section>
+<section id="强化学习-rl-在做什么" class="level1">
+<h1>强化学习 (RL) 在做什么</h1>
+<p>RL 的作用更多是让输出分布更稳定，把正确答案更容易排在 Top-K，而不是提升“基本能力”</p>
 
 
+</section>
 
-
-<div class="quarto-listing quarto-listing-container-default" id="listing-listing">
-<div class="list quarto-listing-default">
-<div class="quarto-post image-right" data-index="0" data-categories="RL,Optimizer" data-listing-date-sort="1756425600000" data-listing-file-modified-sort="1756452494422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="12">
-<div class="thumbnail">
-<p><a href="./posts/DeepSeek-R1.html" class="no-external"></a></p><a href="./posts/DeepSeek-R1.html" class="no-external">
-<p class="card-img-top"><img src="images/maomao3.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/DeepSeek-R1.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/DeepSeek-R1.html" class="no-external">Adam Optimizer</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/DeepSeek-R1.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RL'); return false;">
-RL
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Optimizer'); return false;">
-Optimizer
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/DeepSeek-R1.html" class="no-external">这篇博文是讲Deepseek-R1的一些特别结论</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/DeepSeek-R1.html" class="no-external">
-<div class="listing-date">
-Aug 29, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="1" data-categories="RL,Optimizer" data-listing-date-sort="1756339200000" data-listing-file-modified-sort="1756452494422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="2" data-listing-word-count-sort="294">
-<div class="thumbnail">
-<p><a href="./posts/muon_muonclip.html" class="no-external"></a></p><a href="./posts/muon_muonclip.html" class="no-external">
-<p class="card-img-top"><img src="images/maomao2.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/muon_muonclip.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/muon_muonclip.html" class="no-external">Muon Optimizer</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/muon_muonclip.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RL'); return false;">
-RL
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Optimizer'); return false;">
-Optimizer
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/muon_muonclip.html" class="no-external">这篇博文是讲Muon优化器，Adaptive Moment Estimation</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/muon_muonclip.html" class="no-external">
-<div class="listing-date">
-Aug 28, 2025
-</div>
-</a>
-</div>
-</div>
-<div class="quarto-post image-right" data-index="2" data-categories="RL,Optimizer" data-listing-date-sort="1756252800000" data-listing-file-modified-sort="1756452494422" data-listing-date-modified-sort="NaN" data-listing-reading-time-sort="1" data-listing-word-count-sort="48">
-<div class="thumbnail">
-<p><a href="./posts/adam.html" class="no-external"></a></p><a href="./posts/adam.html" class="no-external">
-<p class="card-img-top"><img src="images/maomao1.png"  class="thumbnail-image card-img"/></p>
-</a><p><a href="./posts/adam.html" class="no-external"></a></p>
-</div>
-<div class="body">
-<h3 class="no-anchor listing-title">
-<a href="./posts/adam.html" class="no-external">Adam Optimizer</a>
-</h3>
-<div class="listing-subtitle">
-<a href="./posts/adam.html" class="no-external"></a>
-</div>
-<div class="listing-categories">
-<div class="listing-category" onclick="window.quartoListingCategory('RL'); return false;">
-RL
-</div>
-<div class="listing-category" onclick="window.quartoListingCategory('Optimizer'); return false;">
-Optimizer
-</div>
-</div>
-<div class="listing-description">
-<a href="./posts/adam.html" class="no-external">这篇博文是讲Adam优化器，Adaptive Moment Estimation</a>
-</div>
-</div>
-<div class="metadata">
-<a href="./posts/adam.html" class="no-external">
-<div class="listing-date">
-Aug 27, 2025
-</div>
-</a>
-</div>
-</div>
-</div>
-<div class="listing-no-matching d-none">
-No matching items
-</div>
-</div></main> <!-- /main -->
+</main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
