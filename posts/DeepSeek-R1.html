@@ -123,9 +123,13 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#代码数学训练集应该先训练" id="toc-代码数学训练集应该先训练" class="nav-link active" data-scroll-target="#代码数学训练集应该先训练">代码数学训练集应该先训练</a></li>
+  <li><a href="#结论" id="toc-结论" class="nav-link active" data-scroll-target="#结论">结论</a>
+  <ul class="collapse">
+  <li><a href="#代码数学训练集应该先训练" id="toc-代码数学训练集应该先训练" class="nav-link" data-scroll-target="#代码数学训练集应该先训练">代码数学训练集应该先训练</a></li>
   <li><a href="#统一范式" id="toc-统一范式" class="nav-link" data-scroll-target="#统一范式">统一范式</a></li>
   <li><a href="#强化学习-rl-在做什么" id="toc-强化学习-rl-在做什么" class="nav-link" data-scroll-target="#强化学习-rl-在做什么">强化学习 (RL) 在做什么</a></li>
+  </ul></li>
+  <li><a href="#follow的一些工作" id="toc-follow的一些工作" class="nav-link" data-scroll-target="#follow的一些工作">Follow的一些工作</a></li>
   </ul>
 </nav>
     </div>
@@ -167,18 +171,26 @@ ul.task-list li input[type="checkbox"] {
 <figcaption>猫猫镇楼</figcaption>
 </figure>
 </div>
-<p>这篇博文是讲Deepseek-R1的一些特别结论</p>
-<section id="代码数学训练集应该先训练" class="level1">
-<h1>代码数学训练集应该先训练</h1>
+<section id="结论" class="level1">
+<h1>结论</h1>
+<p>这一章节Deepseek-R1的一些特别结论, 结论比较分散</p>
+<section id="代码数学训练集应该先训练" class="level2">
+<h2 class="anchored" data-anchor-id="代码数学训练集应该先训练">代码数学训练集应该先训练</h2>
 <p>实验证明，先做代码训练再做数学训练，比从通用 LLM 开始更有利于推理能力</p>
 </section>
-<section id="统一范式" class="level1">
-<h1>统一范式</h1>
+<section id="统一范式" class="level2">
+<h2 class="anchored" data-anchor-id="统一范式">统一范式</h2>
 <p>他们把 SFT、RFT、DPO、PPO、GRPO 放到一个统一框架下看待，强调这些方法本质上都是“简化版的 RL”</p>
 </section>
-<section id="强化学习-rl-在做什么" class="level1">
-<h1>强化学习 (RL) 在做什么</h1>
+<section id="强化学习-rl-在做什么" class="level2">
+<h2 class="anchored" data-anchor-id="强化学习-rl-在做什么">强化学习 (RL) 在做什么</h2>
 <p>RL 的作用更多是让输出分布更稳定，把正确答案更容易排在 Top-K，而不是提升“基本能力”</p>
+</section>
+</section>
+<section id="follow的一些工作" class="level1">
+<h1>Follow的一些工作</h1>
+<p><a href="https://x.com/jiayi_pirate/status/1882839370505621655">TinyZero</a></p>
+<p><a href="https://hkust-nlp.notion.site/simplerl-reason">simpleRL-reason</a></p>
 
 
 </section>
