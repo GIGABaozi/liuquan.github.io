@@ -26,4 +26,4 @@ RL 的作用更多是让输出分布更稳定，把正确答案更容易排在 T
 
 [TinyZero](https://x.com/jiayi_pirate/status/1882839370505621655)
 
-[simpleRL-reason](https://hkust-nlp.notion.site/simplerl-reason)
+[simpleRL-reason](https://hkust-nlp.notion.site/simplerl-reason): longCoT可以出现在7B模型上
