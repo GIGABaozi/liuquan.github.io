@@ -9,9 +9,9 @@
   {
     "objectID": "posts/SFT与RL数据配比.html",
     "href": "posts/SFT与RL数据配比.html",
-    "title": "SFT有什么用",
+    "title": "Adam Optimizer",
     "section": "",
-    "text": "日期\n模型\n方法/说明\n\n\n\n\n2025/0122\nDeepSeek-R1\nDeepSeek-R1 (MoE): SFT-RL-SFT-RL  Llama-3.1-8B (Dense): Distillation: 800k SFT\n\n\n2025/0122\nKimi k1.5\nonline mirror descent\n\n\n\n\nSFT有什么用"
+    "text": "猫猫镇楼\n\n\n\n\n\n日期\n模型\n方法/说明\n\n\n\n\n2025/0122\nDeepSeek-R1\nDeepSeek-R1 (MoE): SFT-RL-SFT-RL  Llama-3.1-8B (Dense): Distillation: 800k SFT\n\n\n2025/0122\nKimi k1.5\nonline mirror descent\n\n\n\n\nSFT有什么用"
   },
   {
     "objectID": "posts/adam.html",
@@ -60,6 +60,6 @@
     "href": "posts.html",
     "title": "首页",
     "section": "",
-    "text": "这里以后会写一些科研随笔、笔记和文章。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nSFT有什么用\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMuon Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "这里以后会写一些科研随笔、笔记和文章。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nSFT\n\n\nRL\n\n\n\n\n\n\n\n\n\nSep 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMuon Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\nNo matching items"
   }
 ]
