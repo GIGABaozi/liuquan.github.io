@@ -10,54 +10,7 @@
 <atom:link href="https://yourname.github.io/posts.xml" rel="self" type="application/rss+xml"/>
 <description></description>
 <generator>quarto-1.5.57</generator>
-<lastBuildDate>Mon, 01 Sep 2025 00:00:00 GMT</lastBuildDate>
-<item>
-  <title>Adam Optimizer</title>
-  <link>https://yourname.github.io/posts/SFT与RL数据配比.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://yourname.github.io/images/maomao4.png" class="img-fluid figure-img"></p>
-<figcaption>猫猫镇楼</figcaption>
-</figure>
-</div>
-<table class="caption-top table">
-<thead>
-<tr class="header">
-<th>日期</th>
-<th>模型</th>
-<th>方法/说明</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>2025/0122</td>
-<td><a href="https://example.com">DeepSeek-R1</a></td>
-<td>DeepSeek-R1 (MoE): SFT-RL-SFT-RL <br> Llama-3.1-8B (Dense): Distillation: 800k SFT</td>
-</tr>
-<tr class="even">
-<td>2025/0122</td>
-<td><a href="https://example.com">Kimi k1.5</a></td>
-<td>online mirror descent</td>
-</tr>
-</tbody>
-</table>
-<section id="sft有什么用" class="level1">
-<h1>SFT有什么用</h1>
-
-
-</section>
-
- ]]></description>
-  <category>SFT</category>
-  <category>RL</category>
-  <guid>https://yourname.github.io/posts/SFT与RL数据配比.html</guid>
-  <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
-</item>
+<lastBuildDate>Thu, 28 Aug 2025 00:00:00 GMT</lastBuildDate>
 <item>
   <title>Muon Optimizer</title>
   <link>https://yourname.github.io/posts/muon_muonclip.html</link>
