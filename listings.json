@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/share.html",
       "/posts/SFT与RL数据配比.html",
       "/posts/DeepSeek-R1.html",
       "/posts/muon_muonclip.html",

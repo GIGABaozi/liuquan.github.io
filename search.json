@@ -14,11 +14,11 @@
     "text": "猫猫镇楼\n\n\n\n\n\n日期\n模型\n方法/说明\n\n\n\n\n2025/0122\nDeepSeek-R1\nDeepSeek-R1 (MoE): SFT-RL-SFT-RL  Llama-3.1-8B (Dense): Distillation: 800k SFT\n\n\n2025/0122\nKimi k1.5\nonline mirror descent\n\n\n\n\nSFT有什么用"
   },
   {
-    "objectID": "posts/adam.html",
-    "href": "posts/adam.html",
-    "title": "Adam Optimizer",
+    "objectID": "posts/share.html",
+    "href": "posts/share.html",
+    "title": "Dors-Liu Quan的笔记",
     "section": "",
-    "text": "猫猫镇楼\n\n\n这篇博文是讲Adam优化器，Adaptive Moment Estimation\n\n基本介绍\n核心想法：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。\n公式为：\n\\[\\theta_t = \\theta_{t-1} - \\eta \\cdot \\frac{\\hat{m_t}}{\\sqrt{\\hat{v_t}} + \\epsilon}\\]\n\n一阶矩（动量）更新： \\[m_t = \\beta_1 m_{t-1} + (1-\\beta_1) g_t, \\quad m_0 = 0\\]\n二阶矩（方差）更新： \\[v_t = \\beta_2 v_{t-1} + (1-\\beta_2) g_t^2, \\quad v_0 = 0\\]\n偏差校正： \\[\\hat{m_t} = \\frac{m_t}{1-\\beta_1^t}, \\quad \\hat{v_t} = \\frac{v_t}{1-\\beta_2^t}\\]\n\n符号说明：\n\n梯度： \\(g_t\\)\n超参（意味着与核心公式无关）： \\(\\eta, \\epsilon, \\beta_1, \\beta_2\\)\n\n\n\n感性理解\n\n一阶矩控制更新方向，二阶矩控制更新速度\n一阶矩\\(m_t\\)也是一种梯度，是过往梯度的“融合”。\\(\\beta_1\\)一般设做\\(0.9\\)，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减\n\n\n\n\n梯度在更新中的贡献"
+    "text": "打假: https://www.lesswrong.com/allPosts\nKimi: https://www.moonshot.cn/"
   },
   {
     "objectID": "posts/muon_muonclip.html",
@@ -49,6 +49,13 @@
     "text": "Muon Optimizer\n# Pytorch code\ndef newtonschulz5(G, steps=5, eps=1e-7):\n    assert G.ndim == 2\n    a, b, c = (3.4445, -4.7750, 2.0315) ------------------------&gt; 满足条件二\n    X = G.bfloat16()\n    X /= (X.norm() + eps)  -------------------------------------&gt; 满足条件一\n    if G.size(0) &gt; G.size(1):\n        X = X.T\n    for _ in range(steps):\n        A = X @ X.T\n        B = b * A + c * A @ A\n        X = a * X + B @ X\n    if G.size(0) &gt; G.size(1):\n        X = X.T\n    return X\n应用上述Newton-Schulz的充分条件：\n\n初始G的奇异值范围在[0,1]之间，所以每次会除以F范数\n当N趋于1时，(phi(x))^N趋于1，所以需要选择合适的a、b、c\n\n完整算法\n\n第四行：加momentum\n第五行：正交化\n\n\n\n\n\n\n\nAlgorithm Muon\n\n\n\nRequire: Learning rate \\(\\eta\\), momentum \\(\\mu\\)\n\nInitialize \\(B_0 \\gets 0\\)\n\nFor \\(t = 1, \\dots\\) do\n\nCompute \\(G_t \\gets \\nabla_\\theta \\mathcal{L}_t(\\theta_{t-1})\\)\n\n\\(B_t \\gets \\mu B_{t-1} + G_t\\)\n\n\\(O_t \\gets \\text{NewtonSchulz5}(B_t)\\)\n\nUpdate \\(\\theta_t \\gets \\theta_{t-1} - \\eta O_t\\)\n\n\nreturn \\(\\theta_t\\)"
   },
   {
+    "objectID": "posts/adam.html",
+    "href": "posts/adam.html",
+    "title": "Adam Optimizer",
+    "section": "",
+    "text": "猫猫镇楼\n\n\n这篇博文是讲Adam优化器，Adaptive Moment Estimation\n\n基本介绍\n核心想法：Adam是针对每一个参数更新的，用一阶矩和二阶矩更新。\n公式为：\n\\[\\theta_t = \\theta_{t-1} - \\eta \\cdot \\frac{\\hat{m_t}}{\\sqrt{\\hat{v_t}} + \\epsilon}\\]\n\n一阶矩（动量）更新： \\[m_t = \\beta_1 m_{t-1} + (1-\\beta_1) g_t, \\quad m_0 = 0\\]\n二阶矩（方差）更新： \\[v_t = \\beta_2 v_{t-1} + (1-\\beta_2) g_t^2, \\quad v_0 = 0\\]\n偏差校正： \\[\\hat{m_t} = \\frac{m_t}{1-\\beta_1^t}, \\quad \\hat{v_t} = \\frac{v_t}{1-\\beta_2^t}\\]\n\n符号说明：\n\n梯度： \\(g_t\\)\n超参（意味着与核心公式无关）： \\(\\eta, \\epsilon, \\beta_1, \\beta_2\\)\n\n\n\n感性理解\n\n一阶矩控制更新方向，二阶矩控制更新速度\n一阶矩\\(m_t\\)也是一种梯度，是过往梯度的“融合”。\\(\\beta_1\\)一般设做\\(0.9\\)，所以每次计算的新梯度都以10%的作用生效，然后逐渐递减\n\n\n\n\n梯度在更新中的贡献"
+  },
+  {
     "objectID": "posts/DeepSeek-R1.html",
     "href": "posts/DeepSeek-R1.html",
     "title": "Adam Optimizer",
@@ -60,6 +67,6 @@
     "href": "posts.html",
     "title": "首页",
     "section": "",
-    "text": "这里以后会写一些科研随笔、笔记和文章。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nSFT\n\n\nRL\n\n\n\n\n\n\n\n\n\nSep 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMuon Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\nNo matching items"
+    "text": "这里以后会写一些科研随笔、笔记和文章。\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nSFT\n\n\nRL\n\n\n\n\n\n\n\n\n\nSep 1, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 29, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nMuon Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 28, 2025\n\n\n\n\n\n\n\n\n\n\n\n\nAdam Optimizer\n\n\n\n\n\n\nRL\n\n\nOptimizer\n\n\n\n\n\n\n\n\n\nAug 27, 2025\n\n\n\n\n\n\nNo matching items"
   }
 ]
