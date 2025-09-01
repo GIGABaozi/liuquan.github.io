@@ -2,30 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yourname.github.io/index.html</loc>
-    <lastmod>2025-09-01T08:25:03.051Z</lastmod>
+    <lastmod>2025-09-01T08:25:29.854Z</lastmod>
   </url>
   <url>
     <loc>https://yourname.github.io/posts/SFT与RL数据配比.html</loc>
-    <lastmod>2025-09-01T08:25:03.052Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yourname.github.io/posts/adam.html</loc>
-    <lastmod>2025-09-01T08:25:03.052Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yourname.github.io/draft/share.html</loc>
-    <lastmod>2025-09-01T08:25:03.049Z</lastmod>
+    <lastmod>2025-09-01T08:25:29.855Z</lastmod>
   </url>
   <url>
     <loc>https://yourname.github.io/posts/muon_muonclip.html</loc>
-    <lastmod>2025-09-01T08:25:03.052Z</lastmod>
+    <lastmod>2025-09-01T08:25:29.855Z</lastmod>
   </url>
   <url>
-    <loc>https://yourname.github.io/posts/DeepSeek-R1.html</loc>
-    <lastmod>2025-09-01T08:25:03.052Z</lastmod>
+    <loc>https://yourname.github.io/draft/share.html</loc>
+    <lastmod>2025-09-01T08:25:29.852Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourname.github.io/draft/DeepSeek-R1.html</loc>
+    <lastmod>2025-09-01T08:25:29.852Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourname.github.io/posts/adam.html</loc>
+    <lastmod>2025-09-01T08:25:29.855Z</lastmod>
   </url>
   <url>
     <loc>https://yourname.github.io/posts.html</loc>
-    <lastmod>2025-09-01T08:25:03.052Z</lastmod>
+    <lastmod>2025-09-01T08:25:29.854Z</lastmod>
   </url>
 </urlset>

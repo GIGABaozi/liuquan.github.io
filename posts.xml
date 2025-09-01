@@ -59,50 +59,6 @@
   <pubDate>Mon, 01 Sep 2025 00:00:00 GMT</pubDate>
 </item>
 <item>
-  <title>Adam Optimizer</title>
-  <link>https://yourname.github.io/posts/DeepSeek-R1.html</link>
-  <description><![CDATA[ 
-
-
-
-
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://yourname.github.io/images/maomao3.png" class="img-fluid figure-img"></p>
-<figcaption>猫猫镇楼</figcaption>
-</figure>
-</div>
-<section id="结论" class="level1">
-<h1>结论</h1>
-<p>这一章节Deepseek-R1的一些特别结论, 结论比较分散</p>
-<section id="代码数学训练集应该先训练" class="level3">
-<h3 class="anchored" data-anchor-id="代码数学训练集应该先训练">代码数学训练集应该先训练</h3>
-<p>实验证明，先做代码训练再做数学训练，比从通用 LLM 开始更有利于推理能力</p>
-</section>
-<section id="统一范式" class="level3">
-<h3 class="anchored" data-anchor-id="统一范式">统一范式</h3>
-<p>他们把 SFT、RFT、DPO、PPO、GRPO 放到一个统一框架下看待，强调这些方法本质上都是“简化版的 RL”</p>
-</section>
-<section id="强化学习-rl-在做什么" class="level3">
-<h3 class="anchored" data-anchor-id="强化学习-rl-在做什么">强化学习 (RL) 在做什么</h3>
-<p>RL 的作用更多是让输出分布更稳定，把正确答案更容易排在 Top-K，而不是提升“基本能力”</p>
-</section>
-</section>
-<section id="follow的一些工作" class="level1">
-<h1>Follow的一些工作</h1>
-<p><a href="https://x.com/jiayi_pirate/status/1882839370505621655">TinyZero</a></p>
-<p><a href="https://hkust-nlp.notion.site/simplerl-reason">simpleRL-reason</a>: longCoT可以出现在7B模型上</p>
-
-
-</section>
-
- ]]></description>
-  <category>RL</category>
-  <category>Optimizer</category>
-  <guid>https://yourname.github.io/posts/DeepSeek-R1.html</guid>
-  <pubDate>Fri, 29 Aug 2025 00:00:00 GMT</pubDate>
-</item>
-<item>
   <title>Muon Optimizer</title>
   <link>https://yourname.github.io/posts/muon_muonclip.html</link>
   <description><![CDATA[ 
