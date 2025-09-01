@@ -2,22 +2,26 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://yourname.github.io/index.html</loc>
-    <lastmod>2025-09-01T07:22:20.785Z</lastmod>
+    <lastmod>2025-09-01T07:33:52.031Z</lastmod>
   </url>
   <url>
-    <loc>https://yourname.github.io/posts/DeepSeek-R1.html</loc>
-    <lastmod>2025-09-01T07:22:20.785Z</lastmod>
-  </url>
-  <url>
-    <loc>https://yourname.github.io/posts/muon_muonclip.html</loc>
-    <lastmod>2025-09-01T07:22:20.786Z</lastmod>
+    <loc>https://yourname.github.io/posts/SFT与RL数据配比.html</loc>
+    <lastmod>2025-09-01T07:33:52.031Z</lastmod>
   </url>
   <url>
     <loc>https://yourname.github.io/posts/adam.html</loc>
-    <lastmod>2025-09-01T07:22:20.786Z</lastmod>
+    <lastmod>2025-09-01T07:33:52.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourname.github.io/posts/muon_muonclip.html</loc>
+    <lastmod>2025-09-01T07:33:52.031Z</lastmod>
+  </url>
+  <url>
+    <loc>https://yourname.github.io/posts/DeepSeek-R1.html</loc>
+    <lastmod>2025-09-01T07:33:52.031Z</lastmod>
   </url>
   <url>
     <loc>https://yourname.github.io/posts.html</loc>
-    <lastmod>2025-09-01T07:22:20.785Z</lastmod>
+    <lastmod>2025-09-01T07:33:52.031Z</lastmod>
   </url>
 </urlset>
