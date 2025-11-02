@@ -2,6 +2,7 @@
   {
     "listing": "/posts.html",
     "items": [
+      "/posts/authenticator.html",
       "/posts/muon_muonclip.html",
       "/posts/adam.html"
     ]
