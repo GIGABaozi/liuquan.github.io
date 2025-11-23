@@ -4,8 +4,6 @@ date: 2025-08-27
 categories: [RL, Optimizer]
 ---
 
-![猫猫镇楼](../images/maomao1.png)
-
 这篇博文是讲Adam优化器，Adaptive Moment Estimation
 
 # 基本介绍
