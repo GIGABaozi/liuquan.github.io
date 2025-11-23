@@ -7,8 +7,6 @@ format:
     theme: cosmo
 ---
 
-![猫猫镇楼](../images/maomao2.png)
-
 这篇博文是讲Muon优化器，Adaptive Moment Estimation
 
 - 你可能收获：一种新的optimzer的原理
